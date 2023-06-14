@@ -5,14 +5,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour {
 
+    [Header("Input Actions")]
+    [Tooltip("Edit key binding")]
     [SerializeField] private InputAction movement;
     [SerializeField] private InputAction firing;
+    
+    [Header("Laser Array")]
+    [Tooltip("Add laser game objects")]
     [SerializeField] private GameObject[] laserArray;
+
+    [Header("Movement Speed")]
+    [Tooltip("Determines how fast the ship moves")]
     [SerializeField] private float moveSpeed;
+    
+    [Header("Position Range")]
+    [Tooltip("Determines range of ship's position")]
     [SerializeField] private float xRange;
     [SerializeField] private float yRange;
+
+    [Header("Position Rotation Factor")]
+    [Tooltip("Changes how much you rotate based upon position")]
     [SerializeField] private float positionPitchFactor;
     [SerializeField] private float positionYawFactor;
+
+    [Header("Input Rotation Factor")]
+    [Tooltip("Changes rotation when moving")]
     [SerializeField] private float inputPitchFactor;
     [SerializeField] private float inputRollFactor;
 
