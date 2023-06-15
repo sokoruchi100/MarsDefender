@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3938244289979815843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 229.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4865591280594679452}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &5873671281519024615
 PlayableDirector:
@@ -48,7 +48,7 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 4796997533955969085, guid: aa18c9e55240aa94d945de01b1801ea6, type: 2}
+  - key: {fileID: 8601420557520171935, guid: aa18c9e55240aa94d945de01b1801ea6, type: 2}
     value: {fileID: 5432174212746720860}
   m_ExposedReferences:
     m_References: []
@@ -78,7 +78,7 @@ PrefabInstance:
     - target: {fileID: 4999199996304908653, guid: 5c3b8011033011c489807bb5382df149,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4999199996304908653, guid: 5c3b8011033011c489807bb5382df149,
         type: 3}

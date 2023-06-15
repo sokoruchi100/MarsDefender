@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject explosionVFX;
     [SerializeField] private GameObject hitVFX;
     [SerializeField] private int scorePerHit;
+    [SerializeField] private int scoreOnDeath;
     [SerializeField] private int health;
 
     private ScoreBoard scoreBoard;
@@ -17,13 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void Start() {
         scoreBoard = FindObjectOfType<ScoreBoard>();
-        CreateRigidBody();
         parentGameObject = GameObject.FindWithTag(TAG_SPAWN_AT_RUNTIME);
-    }
-
-    private void CreateRigidBody() {
-        rigidbody = gameObject.AddComponent<Rigidbody>();
-        rigidbody.useGravity = false;
     }
 
     private void OnParticleCollision(GameObject other) {
@@ -39,6 +34,7 @@ public class Enemy : MonoBehaviour
         newHit.transform.parent = parentGameObject.transform;
 
         scoreBoard.IncreaseScore(scorePerHit);
+
         health--;
     }
 
@@ -46,6 +42,8 @@ public class Enemy : MonoBehaviour
         ParticleSystem newExplosion = Instantiate(explosionVFX, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
         newExplosion.transform.parent = parentGameObject.transform;
 
+        scoreBoard.IncreaseScore(scoreOnDeath);
+        
         Destroy(gameObject);
     }
 }

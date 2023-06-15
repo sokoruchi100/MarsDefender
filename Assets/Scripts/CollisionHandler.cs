@@ -8,6 +8,14 @@ public class CollisionHandler : MonoBehaviour
     private const string RELOAD_SCENE_FUNCTION = "ReloadScene";
     [SerializeField] private float loadDelay;
     [SerializeField] private ParticleSystem explosionVFX;
+    [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private float explosionVolume;
+
+    private AudioSource audioSource;
+
+    private void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other) {
         StartDeathSequence();
@@ -15,6 +23,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void StartDeathSequence() {
         explosionVFX.Play();
+        audioSource.PlayOneShot(explosionSound, explosionVolume);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<PlayerControls>().enabled = false;
